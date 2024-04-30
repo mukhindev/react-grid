@@ -1,43 +1,36 @@
 {
-  "name": "@mukhindev/grid",
+  "name": "@mukhindev/react-grid",
   "version": "1.0.0",
+  "author": "Sergey Mukhin",
+  "description": "Grid for React with a headless UI and simple parameters",
+  "keywords": ["react", "ui", "grid", "columns", "headless ui", "typescript"],
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist"
   ],
-  "module": "./dist2/src/main.js",
-  "types": "./dist2/main.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist2/src/main.js"
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "build": "rollup -c",
     "link": "npm link"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.12.7",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.0"
+    "rollup": "^4.17.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   }
 }

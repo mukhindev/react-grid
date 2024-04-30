@@ -12,7 +12,7 @@ export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   gap?: number | string;
 }
 
-/** Grid with simple control */
+/** Grid for React with a headless UI and simple parameters */
 export default forwardRef(function Grid(
   props: GridProps,
   ref: ForwardedRef<HTMLDivElement>
