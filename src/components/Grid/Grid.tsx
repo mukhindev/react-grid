@@ -37,7 +37,7 @@ export default forwardRef(function Grid(
     <div
       {...divProps}
       data-component={dataComponent ? `Grid/${dataComponent}` : "Grid"}
-      className={[styles.Grid, className].join(" ")}
+      className={[styles.Grid, className].filter((el) => el).join(" ")}
       ref={ref}
       style={{
         "--template-columns": templateColumns,

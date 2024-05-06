@@ -64,7 +64,7 @@ export default forwardRef(function Cell(
     <div
       {...divProps}
       data-component={dataComponent ? `Cell/${dataComponent}` : "Cell"}
-      className={[styles.Cell, className].join(" ")}
+      className={[styles.Cell, className].filter((el) => el).join(" ")}
       ref={ref}
       style={{
         "--grid-column": gridColumn,
