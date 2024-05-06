@@ -1,9 +1,16 @@
 {
   "name": "@mukhindev/react-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Sergey Mukhin",
   "description": "Grid for React with a headless UI and simple parameters",
-  "keywords": ["react", "ui", "grid", "columns", "headless ui", "typescript"],
+  "keywords": [
+    "react",
+    "ui",
+    "grid",
+    "columns",
+    "headless ui",
+    "typescript"
+  ],
   "license": "MIT",
   "type": "module",
   "files": [
