@@ -1,17 +1,20 @@
 # @mukhindev/react-grid
 
-Grid for React with a headless UI and simple parameters
-
-> [!NOTE]  
-> Dependencies: Need support for CSS modules in your configuration
+Grid for React with a headless UI and simple parameters  
 
 Demo: https://github.com/mukhindev/react-grid-demo
 
 ## Install
 
+⚠️ Dependencies: Need support for CSS modules in your configuration. 
+
 ```
 npm install @mukhindev/react-grid
 ```
+
+## CSS Modules
+
+Package components use the CSS modules without pre-processing, so you can process them to suit your build. Vite and Next.js support CSS modules.
 
 ## Grid and Cell
 

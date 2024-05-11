@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ForwardedRef,
   HTMLAttributes,
@@ -64,7 +66,7 @@ export default forwardRef(function Cell(
     <div
       {...divProps}
       data-component={dataComponent ? `Cell/${dataComponent}` : "Cell"}
-      className={[styles.Cell, className].filter((el) => el).join(" ")}
+      className={[styles.root, className].filter((el) => el).join(" ")}
       ref={ref}
       style={{
         "--grid-column": gridColumn,

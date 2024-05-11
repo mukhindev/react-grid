@@ -1,3 +1,5 @@
+"use client";
+
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import styles from "./Grid.module.css";
 import { GridContext } from "./GridContext";
@@ -37,7 +39,7 @@ export default forwardRef(function Grid(
     <div
       {...divProps}
       data-component={dataComponent ? `Grid/${dataComponent}` : "Grid"}
-      className={[styles.Grid, className].filter((el) => el).join(" ")}
+      className={[styles.root, className].filter((el) => el).join(" ")}
       ref={ref}
       style={{
         "--template-columns": templateColumns,

@@ -1,4 +1,4 @@
-.Cell {
+.root {
   --grid-column: unset;
   --grid-row: unset;
   grid-column: var(--grid-column);

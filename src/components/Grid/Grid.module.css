@@ -1,4 +1,4 @@
-.Grid {
+.root {
   --template-columns: unset;
   --template-rows: unset;
   --gap: unset;
