@@ -1,8 +1,5 @@
-"use client";
-
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import styles from "./Grid.module.css";
-import { GridContext } from "./GridContext";
 
 export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   "data-component"?: string;
@@ -17,7 +14,7 @@ export interface GridProps extends HTMLAttributes<HTMLDivElement> {
 /** Grid for React with a headless UI and simple parameters */
 export default forwardRef(function Grid(
   props: GridProps,
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<HTMLDivElement>,
 ) {
   const {
     "data-component": dataComponent,
@@ -30,11 +27,6 @@ export default forwardRef(function Grid(
     ...divProps
   } = props;
 
-  const templateColumns =
-    columns !== undefined ? `repeat(${columns}, 1fr)` : undefined;
-
-  const templateRows = rows !== undefined ? `repeat(${rows}, 1fr)` : undefined;
-
   return (
     <div
       {...divProps}
@@ -42,20 +34,13 @@ export default forwardRef(function Grid(
       className={[styles.root, className].filter((el) => el).join(" ")}
       ref={ref}
       style={{
-        "--template-columns": templateColumns,
-        "--template-rows": templateRows,
+        "--grid-columns": columns,
+        "--grid-rows": rows,
         "--gap": typeof gap === "number" ? `${gap}px` : gap,
         ...style,
       }}
     >
-      <GridContext.Provider
-        value={{
-          columns,
-          rows,
-        }}
-      >
-        {children}
-      </GridContext.Provider>
+      {children}
     </div>
   );
 });

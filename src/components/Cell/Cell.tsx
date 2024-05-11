@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ForwardedRef,
   HTMLAttributes,
@@ -7,7 +5,6 @@ import {
   forwardRef,
 } from "react";
 import styles from "./Cell.module.css";
-import { useGrid } from "../../hooks/useGrid";
 
 export interface CellProps extends HTMLAttributes<HTMLDivElement> {
   "data-component"?: string;
@@ -24,12 +21,12 @@ export interface CellProps extends HTMLAttributes<HTMLDivElement> {
 /** Grid Cell */
 export default forwardRef(function Cell(
   props: PropsWithChildren<CellProps>,
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<HTMLDivElement>,
 ) {
   const {
     "data-component": dataComponent,
-    columns,
-    rows,
+    columns = 1,
+    rows = 1,
     x,
     y,
     children,
@@ -38,28 +35,24 @@ export default forwardRef(function Cell(
     ...divProps
   } = props;
 
-  const { columns: gridColumns, rows: gridRows } = useGrid();
+  let gridColumn = undefined;
 
-  let gridColumn =
-    columns !== undefined
-      ? columns > -1
-        ? `span ${columns <= (gridColumns ?? Infinity) ? columns : gridColumns}`
-        : `span ${gridColumns}`
-      : `span 1`;
-
-  let gridRow =
-    rows !== undefined
-      ? rows > -1
-        ? `span ${rows <= (gridRows ?? Infinity) ? rows : gridRows}`
-        : `span ${gridRows}`
-      : `span 1`;
-
-  if (x !== undefined) {
-    gridColumn = `${x + 1} / ${gridColumn}`;
+  if (columns > -1 && x) {
+    gridColumn = `${x + 1}/span ${columns}`;
   }
 
-  if (y !== undefined) {
-    gridRow = `${y + 1} / ${gridRow}`;
+  if (columns === -1) {
+    gridColumn = `-1/1`;
+  }
+
+  let gridRow = undefined;
+
+  if (rows > -1 && y) {
+    gridRow = `${y + 1}/span ${rows}`;
+  }
+
+  if (rows === -1) {
+    gridRow = `-1/1`;
   }
 
   return (

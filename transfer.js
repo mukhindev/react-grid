@@ -31,7 +31,6 @@ const transfer = async (dir) => {
     if (transferableAssets.some((el) => file.endsWith(el))) {
       const relativePath = relative(rootDir, path);
       await copyFile(path, resolve(outDir, relativePath));
-      // console.log(file, dir, path);
     }
   }
 };

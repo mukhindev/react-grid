@@ -1,9 +1,10 @@
 .root {
-  --template-columns: unset;
-  --template-rows: unset;
+  --grid-columns: unset;
+  --grid-rows: unset;
   --gap: unset;
+
   display: grid;
-  grid-template-columns: var(--template-columns);
-  grid-template-rows: var(--template-rows);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
   gap: var(--gap);
 }

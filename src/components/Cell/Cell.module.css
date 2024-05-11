@@ -1,6 +1,7 @@
 .root {
   --grid-column: unset;
   --grid-row: unset;
+
   grid-column: var(--grid-column);
   grid-row: var(--grid-row);
 }
